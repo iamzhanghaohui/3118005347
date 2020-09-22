@@ -1,5 +1,10 @@
 package com.free;
 import cn.hutool.core.io.file.FileReader;
+import com.free.util.FileUtil;
+import com.free.util.TokenizerUtil;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassNamemain
@@ -10,11 +15,11 @@ import cn.hutool.core.io.file.FileReader;
  **/
 public class main {
     public static void main(String[] args) {
-        System.out.println("初始化仓库");
-        //默认UTF-8编码，可以在构造中传入第二个参数做为编码
-        FileReader fileReader = new FileReader("D:\\Free\\课程\\软件工程\\数据源\\test\\test\\orig.txt");
-        String result = fileReader.readString();
-        System.out.println(result);
-
+        String file1 = args[0];
+        String file2 = args[1];
+        Map<String, List<Integer>> stringListMap = TokenizerUtil.CountWord(file1);
+        Map<String, List<Integer>> stringListMap2 = TokenizerUtil.CountWord(file2);
+        Double aDouble = TokenizerUtil.CountCos(stringListMap, stringListMap2);
+        FileUtil.writeFile(args[2],String.valueOf(aDouble));
     }
 }
