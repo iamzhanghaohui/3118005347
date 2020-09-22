@@ -20,21 +20,25 @@ import java.util.*;
 public class TokenizerUtil {
 
     public static Map<String, List<Integer>> CountWord(String path){
+        //new 一个结果树
         Map<String, List<Integer>> resMap = new TreeMap<String,List<Integer>>();
-
+        //初始化分词引擎
         TokenizerEngine engine = new HanLPEngine();
         try {
+            //读取文件
             String s = FileUtil.readFile(path);
         }catch (FileException e){
             System.out.println(e.getMessage());
             return null;
         }
+        //默认先用UTF-8编码
         FileReader fileReader = new FileReader(path,"UTF-8");
         String text = fileReader.readString();
         Result result = engine.parse(text);
         //解析文本
         Iterator<Word> iterator = result.iterator();
         int pos=0;
+        //开始遍历
         while(iterator.hasNext()){
             String tempWord = iterator.next().toString();
             String afterWord ="";
@@ -67,7 +71,6 @@ public class TokenizerUtil {
         if(map1==null||map2==null){
             return null;
         }
-
 
         //统计计算了多少个词
         int count = 0;

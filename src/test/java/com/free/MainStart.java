@@ -99,7 +99,7 @@ public class MainStart {
     }
     @Test
     public void DIYpointTest(){
-        String path = "D:\\Free\\test\\3.txt";
+        String path = "D:\\Free\\test\\1000.txt";
         String path2 = "D:\\Free\\test\\4.txt";
         Map<String, List<Integer>> stringListMap = TokenizerUtil.CountWord(path);
         Map<String, List<Integer>> stringListMap2 = TokenizerUtil.CountWord(path2);
