@@ -29,7 +29,7 @@ public class TokenizerUtil {
             System.out.println(e.getMessage());
             return null;
         }
-        FileReader fileReader = new FileReader(path);
+        FileReader fileReader = new FileReader(path,"UTF-8");
         String text = fileReader.readString();
         Result result = engine.parse(text);
         //解析文本

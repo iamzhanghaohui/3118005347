@@ -15,7 +15,7 @@ import java.util.Map;
  * @Version V1.0
  **/
 
-public class main {
+public class MainStart {
     @Test
      public void sameTest(){
         String path = "D:\\Free\\课程\\软件工程\\数据源\\test\\orig_0.8_add.txt";
@@ -91,6 +91,16 @@ public class main {
     public void NullpointTest(){
         String path = "";
         String path2 = "";
+        Map<String, List<Integer>> stringListMap = TokenizerUtil.CountWord(path);
+        Map<String, List<Integer>> stringListMap2 = TokenizerUtil.CountWord(path2);
+        Double aDouble = TokenizerUtil.CountCos(stringListMap, stringListMap2);
+        FileUtil.writeFile("D:\\Free\\课程\\软件工程\\数据源\\test\\test\\res.txt",String.valueOf(aDouble));
+        System.out.println(aDouble);
+    }
+    @Test
+    public void DIYpointTest(){
+        String path = "D:\\Free\\test\\3.txt";
+        String path2 = "D:\\Free\\test\\4.txt";
         Map<String, List<Integer>> stringListMap = TokenizerUtil.CountWord(path);
         Map<String, List<Integer>> stringListMap2 = TokenizerUtil.CountWord(path2);
         Double aDouble = TokenizerUtil.CountCos(stringListMap, stringListMap2);

@@ -21,7 +21,13 @@ public class FileUtil {
         if(filepath==null ||"".equals(filepath)){
             throw new FileException("文件路径为空");
         }
-        FileReader fileReader = new FileReader(filepath);
+        FileReader fileReader = null;
+        try {
+             fileReader = new FileReader(filepath);
+        }catch (Exception e){
+            throw new FileException("文件为空");
+        }
+
         String result = fileReader.readString();
         return result;
     }
