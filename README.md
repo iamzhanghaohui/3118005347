@@ -19,3 +19,8 @@
 安装idea jprofiler插件和安装window版
 ### 9.22 
 添加测试用例
+
+最后的jar包在resource目录下
+
+### 运行方法
+java -jar main.jar [原文文件] [抄袭版论文的文件] [答案文件]
